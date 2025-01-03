@@ -454,7 +454,13 @@ function Kavo.CreateLib(kavName, themeList)
                 if MoveingUi then
                     local MouseXOffSet = game:GetService("UserInputService"):GetMouseLocation().X - expandholder.Position.X.Offset
                     local MouseYOffSet = game:GetService("UserInputService"):GetMouseLocation().Y - expandholder.Position.Y.Offset
+                    local StartingMouseX = game:GetService("UserInputService"):GetMouseLocation().X
+                    local StartingMouseY = game:GetService("UserInputService"):GetMouseLocation().Y
+                    local startingtime = os.time()
                     repeat
+                        if (os.time() - startingtime) >= 2 and (StartingMouseX-game:GetService("UserInputService"):GetMouseLocation().X) <= 1 and (StartingMouseY-game:GetService("UserInputService"):GetMouseLocation().Y) <= 1 then
+                            game.StarterGui:SetCore("SendNotification", {Title="Pro Bacon"; Text='This button is for expanding ProBaconHub.'; Duration=5;})
+                        end
                         expandholder.Position = UDim2.new(0,game:GetService("UserInputService"):GetMouseLocation().X-MouseXOffSet,0,game:GetService("UserInputService"):GetMouseLocation().Y-MouseYOffSet)
                         task.wait(0.0001)
                     until not MoveingUi
