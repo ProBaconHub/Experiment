@@ -11,7 +11,7 @@ function Kavo:DraggingEnabled(frame, parent)
         
     parent = parent or frame
     
-    -- stolen from wally or kiriot, kek
+    
     local dragging = false
     local dragInput, mousePos, framePos
 
@@ -299,13 +299,25 @@ function Kavo.CreateLib(kavName, themeList)
     minimize.Parent = MainHeader
     minimize.BackgroundTransparency = 1.000
     minimize.Position = UDim2.new(0.899999976, 0, 0.137999997, 0)
-    minimize.Size = UDim2.new(0, 21, 0, 21)
+    minimize.Size = UDim2.new(0, 19, 0, 19)
     minimize.ZIndex = 2
     minimize.Image = "rbxassetid://3926305904"
     minimize.ImageRectOffset = Vector2.new(250, 210)
     minimize.ImageRectSize = Vector2.new(24, 24)
     minimize.MouseButton1Click:Connect(function()
         game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Transparency = 1
+        }):Play()
+        game.TweenService:Create(MainHeader, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Transparency = 1
+        }):Play()
+        game.TweenService:Create(MainSide, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Transparency = 1
+        }):Play()
+        game.TweenService:Create(tabFrames, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Transparency = 1
+        }):Play()
+        game.TweenService:Create(pages, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
             Transparency = 1
         }):Play()
     end)
