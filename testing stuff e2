@@ -337,6 +337,7 @@ function Kavo.CreateLib(kavName, themeList)
 
     expand.Name = "expand"
     expand.Image = "rbxassetid://3926305904"
+    expand.BackgroundTransparency = 1.000
     expand.ImageRectOffset = Vector2.new(730, 210)
     expand.ImageRectSize = Vector2.new(24, 24)
     expand.Size = UDim2.new(0.75, 0, 0.75, 0)
@@ -367,7 +368,7 @@ function Kavo.CreateLib(kavName, themeList)
         }):Play()
         game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 			Size = UDim2.new(0, 525, 0, 318),
-			Position = UDim2.new(0, mainframepos.X - (mainframepos.X / 2), 0, mainframepos.Y - (mainframepos.Y / 2))
+			Position = UDim2.new(0, mainframepos.X - (525 / 2), 0, mainframepos.Y - (318 / 2))
 		}):Play()
     end)
 
