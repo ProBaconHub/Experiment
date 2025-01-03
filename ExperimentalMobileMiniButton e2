@@ -293,7 +293,7 @@ function Kavo.CreateLib(kavName, themeList)
 			Size = UDim2.new(0,0,0,0),
 			Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
 		}):Play()
-        wait(1)
+        wait(.5)
         ScreenGui:Destroy()
     end)
 
@@ -333,7 +333,6 @@ function Kavo.CreateLib(kavName, themeList)
 			Size = UDim2.new(0,0,0,0),
 			Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
 		}):Play()
-        wait(1)
     end)
 
     expand.Name = "expand"
@@ -367,9 +366,8 @@ function Kavo.CreateLib(kavName, themeList)
         }):Play()
         game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 			Size = UDim2.new(0, 525, 0, 318),
-			Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
+			--Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
 		}):Play()
-        wait(1)
     end)
 
     expandholder.Name = "expandbutton"
