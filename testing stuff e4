@@ -382,13 +382,9 @@ function Kavo.CreateLib(kavName, themeList)
             Transparency = 1
         }):Play()
         game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-			Size = UDim2.new(0,100,0,100),
+			Size = UDim2.new(0,0,0,0),
 			Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
 		}):Play()
-        for _ = 1, 10 do
-            setupinstance()
-            task.wait(0.01)
-        end
     end)
 
     expand.Name = "expand"
@@ -426,7 +422,10 @@ function Kavo.CreateLib(kavName, themeList)
 			Size = UDim2.new(0, 525, 0, 318),
 			Position = UDim2.new(0, mainframepos.X - (525 / 2), 0, mainframepos.Y - (318 / 2))
 		}):Play()
-
+        for _ = 1, 10 do
+            setupinstance()
+            task.wait(0.01)
+        end
     end)
 
     expandholder.Name = "expandbutton"
