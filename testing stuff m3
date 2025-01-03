@@ -438,6 +438,7 @@ function Kavo.CreateLib(kavName, themeList)
 
     local function MaDaFaKa_fake_script()
         task.spawn(function()
+            expandholder.Position = expandholder.AbsolutePosition
             while task.wait(0.0001) do
                 if MoveingUi then
                     local MouseXOffSet = game:GetService("UserInputService"):GetMouseLocation().X - expandholder.Position.X.Offset
@@ -459,8 +460,8 @@ function Kavo.CreateLib(kavName, themeList)
 	    		MoveingUi = false
 	    	end
 	    end
-        expandholder.InputBegan:Connect(inputBegan)
-	    expandholder.InputEnded:Connect(inputEnd)
+        expand.InputBegan:Connect(inputBegan)
+	    expand.InputEnded:Connect(inputEnd)
     end
     coroutine.wrap(MaDaFaKa_fake_script)()
 
