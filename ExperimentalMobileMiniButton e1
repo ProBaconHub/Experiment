@@ -203,6 +203,8 @@ function Kavo.CreateLib(kavName, themeList)
     local title = Instance.new("TextLabel")
     local close = Instance.new("ImageButton")
     local minimize = Instance.new("ImageButton")
+    local expandholder = Instance.new("Frame", ScreenGui)
+    local expand = Instance.new("ImageButton", expandholder)
     local MainSide = Instance.new("Frame")
     local sideCorner = Instance.new("UICorner")
     local coverup_2 = Instance.new("Frame")
@@ -332,8 +334,51 @@ function Kavo.CreateLib(kavName, themeList)
 			Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
 		}):Play()
         wait(1)
-        ScreenGui:Destroy()
     end)
+
+    expand.Name = "expand"
+    expand.Image = "rbxassetid://3926305904"
+    expand.ImageRectOffset = Vector2.new(730, 210)
+    expand.ImageRectSize = Vector2.new(24, 24)
+    expand.Size = UDim2.new(0.75, 0, 0.75, 0)
+    expand.AnchorPoint = Vector2.new(0.5, 0.5)
+    expand.Position = UDim2.new(0.5, 0, 0.5, 0)
+    expand.MouseButton1Click:Connect(function()
+        game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Transparency = 0
+        }):Play()
+        game.TweenService:Create(MainHeader, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Transparency = 0
+        }):Play()
+        game.TweenService:Create(MainSide, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Transparency = 0
+        }):Play()
+        game.TweenService:Create(tabFrames, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Transparency = 0
+        }):Play()
+        game.TweenService:Create(coverup, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Transparency = 0
+        }):Play()
+        game.TweenService:Create(coverup_2, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Transparency = 0
+        }):Play()
+        game.TweenService:Create(pages, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Transparency = 0
+        }):Play()
+        game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+			Size = UDim2.new(0, 525, 0, 318),
+			Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
+		}):Play()
+        wait(1)
+    end)
+
+    expandholder.Name = "expandbutton"
+    expandholder.BackgroundColor3 = Color3.new(0,0,0)
+    expandholder.AnchorPoint = Vector2.new(0.5, 0)
+    expandholder.Position = UDim2.new(0.5, 0, 0, 25)
+    expandholder.Size = UDim2.new(0, 35, 0, 35)
+    local rq = Instance.new("UICorner", expandholder)
+    rq.CornerRadius = UDim.new(0, 8)
 
     MainSide.Name = "MainSide"
     MainSide.Parent = Main
