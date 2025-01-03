@@ -317,6 +317,12 @@ function Kavo.CreateLib(kavName, themeList)
         game.TweenService:Create(tabFrames, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
             Transparency = 1
         }):Play()
+        game.TweenService:Create(coverup, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Transparency = 1
+        }):Play()
+        game.TweenService:Create(coverup_2, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Transparency = 1
+        }):Play()
         game.TweenService:Create(pages, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
             Transparency = 1
         }):Play()
