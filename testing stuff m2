@@ -440,8 +440,8 @@ function Kavo.CreateLib(kavName, themeList)
         task.spawn(function()
             while task.wait(0.0001) do
                 if MoveingUi then
-                    local MouseXOffSet = game:GetService("UserInputService"):GetMouseLocation().X - game.Players.LocalPlayer.PlayerGui.ProBaconHubMobileFly.Frame.Position.X.Offset
-                    local MouseYOffSet = game:GetService("UserInputService"):GetMouseLocation().Y - game.Players.LocalPlayer.PlayerGui.ProBaconHubMobileFly.Frame.Position.Y.Offset
+                    local MouseXOffSet = game:GetService("UserInputService"):GetMouseLocation().X - expandholder.Position.X.Offset
+                    local MouseYOffSet = game:GetService("UserInputService"):GetMouseLocation().Y - expandholder.Position.Y.Offset
                     repeat
                         expandholder.Position = UDim2.new(0,game:GetService("UserInputService"):GetMouseLocation().X-MouseXOffSet,0,game:GetService("UserInputService"):GetMouseLocation().Y-MouseYOffSet)
                         task.wait(0.0001)
