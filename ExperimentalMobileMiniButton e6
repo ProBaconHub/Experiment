@@ -330,7 +330,7 @@ function Kavo.CreateLib(kavName, themeList)
             Transparency = 1
         }):Play()
         game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-			Size = UDim2.new(0,0.01,0,0.01),
+			Size = UDim2.new(0,50,0,50),
 			Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
 		}):Play()
     end)
