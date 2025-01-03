@@ -308,6 +308,7 @@ function Kavo.CreateLib(kavName, themeList)
     minimize.ImageRectOffset = Vector2.new(250, 210)
     minimize.ImageRectSize = Vector2.new(24, 24)
     minimize.MouseButton1Click:Connect(function()
+        --[[
         game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
             Transparency = 1
         }):Play()
@@ -329,6 +330,7 @@ function Kavo.CreateLib(kavName, themeList)
         game.TweenService:Create(pages, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
             Transparency = 1
         }):Play()
+        ]]
         game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 			Size = UDim2.new(0,0,0,0),
 			Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
@@ -343,6 +345,7 @@ function Kavo.CreateLib(kavName, themeList)
     expand.AnchorPoint = Vector2.new(0.5, 0.5)
     expand.Position = UDim2.new(0.5, 0, 0.5, 0)
     expand.MouseButton1Click:Connect(function()
+        local mainframepos = Main.AbsolutePosition
         game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
             Transparency = 0
         }):Play()
@@ -366,7 +369,7 @@ function Kavo.CreateLib(kavName, themeList)
         }):Play()
         game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 			Size = UDim2.new(0, 525, 0, 318),
-			Position = UDim2.new(0, Main.AbsolutePosition.X - (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y - (Main.AbsoluteSize.Y / 2))
+			Position = UDim2.new(0, mainframepos.X - (mainframepos.X / 2), 0, mainframepos.Y - (mainframepos.Y / 2))
 		}):Play()
     end)
 
