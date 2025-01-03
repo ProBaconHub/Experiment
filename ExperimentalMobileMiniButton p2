@@ -299,7 +299,7 @@ function Kavo.CreateLib(kavName, themeList)
     minimize.Parent = MainHeader
     minimize.BackgroundTransparency = 1.000
     minimize.AnchorPoint = Vector2.new(0, 0.5)
-    minimize.Position = UDim2.new(0.95, 0, 0.5, 0)  --899999976
+    minimize.Position = UDim2.new(0.9175, 0, 0.5, 0)  --899999976
     minimize.Size = UDim2.new(0, 15, 0, 15)
     minimize.ZIndex = 2
     minimize.Image = "rbxassetid://3926305904"
