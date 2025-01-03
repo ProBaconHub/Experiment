@@ -348,7 +348,7 @@ function Kavo.CreateLib(kavName, themeList)
         infoContainer.Size = UDim2.new(0, 368, 0, 33)
     end
     setupinstance()
-
+    local expanded = true
     minimize.Name = "minimize"
     minimize.Parent = MainHeader
     minimize.BackgroundTransparency = 1.000
@@ -360,31 +360,34 @@ function Kavo.CreateLib(kavName, themeList)
     minimize.ImageRectOffset = Vector2.new(250, 210)
     minimize.ImageRectSize = Vector2.new(24, 24)
     minimize.MouseButton1Click:Connect(function()
-        game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Transparency = 1
-        }):Play()
-        game.TweenService:Create(MainHeader, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Transparency = 1
-        }):Play()
-        game.TweenService:Create(MainSide, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Transparency = 1
-        }):Play()
-        game.TweenService:Create(tabFrames, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Transparency = 1
-        }):Play()
-        game.TweenService:Create(coverup, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Transparency = 1
-        }):Play()
-        game.TweenService:Create(coverup_2, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Transparency = 1
-        }):Play()
-        game.TweenService:Create(pages, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Transparency = 1
-        }):Play()
-        game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-			Size = UDim2.new(0,0,0,0),
-			Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
-		}):Play()
+        if expanded then
+            expanded = false
+            game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                Transparency = 1
+            }):Play()
+            game.TweenService:Create(MainHeader, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                Transparency = 1
+            }):Play()
+            game.TweenService:Create(MainSide, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                Transparency = 1
+            }):Play()
+            game.TweenService:Create(tabFrames, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                Transparency = 1
+            }):Play()
+            game.TweenService:Create(coverup, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                Transparency = 1
+            }):Play()
+            game.TweenService:Create(coverup_2, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                Transparency = 1
+            }):Play()
+            game.TweenService:Create(pages, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                Transparency = 1
+            }):Play()
+            game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+		    	Size = UDim2.new(0,0,0,0),
+		    	Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
+		    }):Play()
+        end
     end)
 
     expand.Name = "expand"
@@ -396,35 +399,43 @@ function Kavo.CreateLib(kavName, themeList)
     expand.AnchorPoint = Vector2.new(0.5, 0.5)
     expand.Position = UDim2.new(0.5, 0, 0.5, 0)
     expand.MouseButton1Click:Connect(function()
-        local mainframepos = Main.AbsolutePosition
-        game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Transparency = 0
-        }):Play()
-        game.TweenService:Create(MainHeader, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Transparency = 0
-        }):Play()
-        game.TweenService:Create(MainSide, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Transparency = 0
-        }):Play()
-        game.TweenService:Create(tabFrames, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Transparency = 0
-        }):Play()
-        game.TweenService:Create(coverup, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Transparency = 0
-        }):Play()
-        game.TweenService:Create(coverup_2, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Transparency = 0
-        }):Play()
-        game.TweenService:Create(pages, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Transparency = 0
-        }):Play()
-        game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-			Size = UDim2.new(0, 525, 0, 318),
-			Position = UDim2.new(0, mainframepos.X - (525 / 2), 0, mainframepos.Y - (318 / 2))
-		}):Play()
-        for _ = 1, 10 do
-            setupinstance()
-            task.wait(0.01)
+        if not expanded then
+            expanded = true
+            local animationdone = false
+            local mainframepos = Main.AbsolutePosition
+            game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                Transparency = 0
+            }):Play()
+            game.TweenService:Create(MainHeader, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                Transparency = 0
+            }):Play()
+            game.TweenService:Create(MainSide, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                Transparency = 0
+            }):Play()
+            game.TweenService:Create(tabFrames, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                Transparency = 0
+            }):Play()
+            game.TweenService:Create(coverup, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                Transparency = 0
+            }):Play()
+            game.TweenService:Create(coverup_2, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                Transparency = 0
+            }):Play()
+            game.TweenService:Create(pages, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                Transparency = 0
+            }):Play()
+            local tweenmainui = game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+		    	Size = UDim2.new(0, 525, 0, 318),
+		    	Position = UDim2.new(0, mainframepos.X - (525 / 2), 0, mainframepos.Y - (318 / 2))
+		    }):Play()
+            task.spawn(function()
+                tweenmainui.Completed:Wait()
+                animationdone = true
+            end)
+            repeat
+                setupinstance()
+                task.wait(0.001)
+            until animationdone
         end
     end)
 
